@@ -1,7 +1,7 @@
 def read_md(f):   # as long PyPI doesn't support README.md
     try:
         from pypandoc import convert      # need (apt)pandoc + (pip)pypandoc
-        return convert(f, 'rst')
+        return convert(f, 'rst', 'md')
     except ImportError:
         return open(f, 'r').read()
 
@@ -35,7 +35,7 @@ setup(
   author_email='zvolsky@seznam.cz',
   url='https://github.com/zvolsky/dbf_read_iffy',
   download_url='https://github.com/zvolsky/dbf_read_iffy/tarball/1.0',
-  keywords=['dbf', 'dbase', 'foxpro', 'vfp', '895', 'Kamenicky', '620', 'Mazovia', 'encoding'],
+  keywords=['dbf', 'dbase', 'foxpro', 'vfp', 'encoding', '895', 'Kamenicky', '620', 'Mazovia'],
   classifiers=[
       'Development Status :: 4 - Beta',
       'Intended Audience :: Developers',
@@ -48,8 +48,5 @@ setup(
       'Programming Language :: Python',
       'Programming Language :: Python :: 2',
       'Programming Language :: Python :: 3',
-      'Programming Language :: dBase',
-      'Programming Language :: Foxpro',
-      'Programming Language :: VFP',
   ],
 )

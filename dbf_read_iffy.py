@@ -16,10 +16,7 @@ t.close()
 """
 
 
-try:
-    from __future__ import unicode_literals
-except ImportError:
-    pass
+from __future__ import unicode_literals   # must be 1st import
 
 
 def fix_620(txt):
