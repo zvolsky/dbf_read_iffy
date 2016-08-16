@@ -10,3 +10,5 @@ Make possible to read from dbf's with codepage unsupported by modules dbf and co
 	for record in t:
 	    print fix_895(record.autor)
 	t.close()
+
+For 620 pl Mazovia: You can define conversion map in fix_620(). If possible please: Fork me, clone your fork, commit/push, generate Pull request from your fork. Thx.
