@@ -27,7 +27,7 @@ setup(
   cmdclass={'build_py': build_py},
   name='dbf_read_iffy',
   py_modules=['dbf_read_iffy'],
-  version='1.0',
+  version='1.0.1',
   description="Read from dbf's if codepage is unsupported by modules dbf and codecs (895 cz Kamenicky, ..).",
   long_description=read_md('README.md'),
   install_requires=['dbf'],
