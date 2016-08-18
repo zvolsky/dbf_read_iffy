@@ -1,3 +1,5 @@
+import os
+
 def read_md(f):   # as long PyPI doesn't support README.md
     try:
         from pypandoc import convert      # need (apt)pandoc + (pip)pypandoc
@@ -23,13 +25,16 @@ else:
     except ImportError:
         from distutils.command.build_py import build_py
 
+if os.path.isfile('README.md'):
+    extra = {'long_description': read_md('README.md')}
+else:
+    extra = {}
 setup(
   cmdclass={'build_py': build_py},
   name='dbf_read_iffy',
   py_modules=['dbf_read_iffy'],
-  version='1.0.1',
+  version='1.0.2',
   description="Read from dbf's if codepage is unsupported by modules dbf and codecs (895 cz Kamenicky, ..).",
-  long_description=read_md('README.md'),
   install_requires=['dbf'],
   author='Mirek Zvolsky',
   author_email='zvolsky@seznam.cz',
@@ -49,4 +54,5 @@ setup(
       'Programming Language :: Python :: 2',
       'Programming Language :: Python :: 3',
   ],
+  **extra
 )
